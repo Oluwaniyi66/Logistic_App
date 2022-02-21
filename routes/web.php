@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HektoController;
 use App\Http\Controllers\ProjectoneController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,6 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// My Hekcto ecommerce product Add
+
+Route::match(['get','post'],'/add_product', [HektoController::class, 'AddProduct']);
+
 
 //Home page side
 

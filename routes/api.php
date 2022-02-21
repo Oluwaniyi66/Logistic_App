@@ -3,6 +3,7 @@
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProjectoneController;
 use App\Http\Controllers\CrudController;
+use App\Http\Controllers\HektoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,14 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// add api for the users
 
 Route::match(['post', 'get'], '/add_user', [CrudController::class, 'addUser']);
 Route::match(['post', 'get'], '/all_users', [CrudController::class, 'getUsers']);
+
+//adding api for products
+
+Route::match(['post', 'get'], '/add_product', [HektoController::class, 'AddProduct']);
+Route::match(['post', 'get'], '/all_products', [HektoController::class, 'getProducts']);
+Route::match(['post', 'get'], '/single_product/{id}', [HektoController::class, 'singleProduct']);
+Route::match(['post', 'get'], '/all_status', [HektoController::class, 'getStatus']);
