@@ -38,6 +38,11 @@ Route::match(['post', 'get'], '/all_users', [CrudController::class, 'getUsers'])
 //adding api for products
 
 Route::match(['post', 'get'], '/add_product', [HektoController::class, 'AddProduct']);
+Route::match(['post', 'get'], '/add_ship', [HektoController::class, 'addShip']);
+Route::match(['post', 'get'], '/get_user/{user_id}', [HektoController::class, 'getUser']);
+Route::match(['post', 'get'], '/register', [HektoController::class, 'register']);
+Route::match(['post', 'get'], '/item_bought', [HektoController::class, 'saveOrder']);
+Route::match(['post', 'get'], '/signin', [HektoController::class, 'signin']);
 Route::match(['post', 'get'], '/all_products', [HektoController::class, 'getProducts']);
 Route::match(['post', 'get'], '/single_product/{id}', [HektoController::class, 'singleProduct']);
 Route::match(['post', 'get'], '/all_status', [HektoController::class, 'getStatus']);
